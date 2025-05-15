@@ -1,0 +1,25 @@
+#timeline {
+    position: relative;
+    width: 1500px;
+
+}
+
+.arrow {
+    width: 200px;
+    position: left;
+}
+
+#descripcion_evento {
+    width: 100px;
+    margin-left: 50px;
+
+}
+
+#titulo_evento {
+    width: 100px;
+    margin-left: 50px;
+}
+
+#rango{
+    width:1500px;
+}

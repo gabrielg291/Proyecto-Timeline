@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linea de tiempo</title>
+
+    <link rel="stylesheet" href="css/styles_timeline.css">
+
+</head>
+<body>
+    <h1> Bienvenido a la linea de tiempo mas completa</h1>
+
+    <div>
+        
+        <img id="timeline" src="../templates/flecha.png" alt="linea de tiempo">
+
+        <img class="arrow" src="../templates/abajo.png" alt="flecha hacia abajo">
+
+        
+        <form>
+            
+            <div id="seleccion_anio">
+                
+                <input type="range" id="rango" min="-10000" max="2025" step="1" value="0" >
+                <label> Año:</label><input type="number" min="-10000" max="2025" id="valor">
+
+            </div>
+            
+            <select name="" id="seleccion_tema">
+                <option value=" "></option>
+            </select>
+        </form>
+        
+        
+        <h2 id="titulo_tema"> </h2>
+        <h3 id="titulo_evento"> </h3>
+        <p id="descripcion_evento"></p>
+
+    </div>
+
+    <a href="index.html">indice</a>
+    <script src="js/timeline.js"></script>
+</body>
+</html>
