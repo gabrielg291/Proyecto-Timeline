@@ -1,21 +1,38 @@
 package com.example.Timeline.models;
 
+
+import jakarta.persistence.*;
+
+import java.util.Arrays;
+
+@Entity
+@Table(name = "eventos")
 public class Evento {
-    private int id;
-    private int[] años;
-    private String tema;
-    private String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private final Long id;
+
+    private final int[] años;
+    private final String tema;
+    private final String nombre;
+
+    @Column(nullable = true)
     private String descripcion;
 
-    public Evento(int id, int[] años, String tema, String nombre, String descripcion) {
+
+    public Evento(Long id, int[] años, String tema, String nombre) {
         this.id = id;
         this.años = años;
         this.tema = tema;
         this.nombre = nombre;
+    }
+
+    public Evento(Long id, int[] años, String tema, String nombre, String descripcion) {
+        this(id,años,tema,nombre);
         this.descripcion = descripcion;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -33,6 +50,21 @@ public class Evento {
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setDescripcion(String descripcion){
+        this.descripcion= descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "id=" + id +
+                ", años=" + Arrays.toString(años) +
+                ", tema='" + tema + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
     }
 }
 

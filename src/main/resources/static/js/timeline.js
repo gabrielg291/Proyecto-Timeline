@@ -7,9 +7,9 @@ function iniciar() {
   let rango= document.getElementById("rango");
   let valor = document.getElementById("valor");
 
-  valor.value= rango.value;
-  valor.addEventListener("input",valueHandler);
-  rango.addEventListener("input",rangeHandler);
+  valor.value= rango.value;           
+  valor.addEventListener("input",()=>rango.value=valor.value);
+  rango.addEventListener("input",()=>valor.value=rango.value);
 }
 
 async function cargarEvento(){
@@ -36,17 +36,8 @@ async function cargarEvento(){
       seleccion_tema.innerHTML=`<option>${evento.tema}</option>`;
 }
 
-
-function rangeHandler(){
-    console.log("rango");
-    valor.value=rango.value;
+async function showEvent(evento) {
+  
 }
-
-function valueHandler(){
-    console.log("valor");
-    rango.value=valor.value;
-}
-
-
 
 
